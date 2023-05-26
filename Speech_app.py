@@ -21,9 +21,9 @@ st.markdown(
     This is an AI tool. This tool will convert your text into audio. You can also drop you text file here and download the audio file.
 """
 )
-model = SpeechT5ForTextToSpeech.from_pretrained("speecht5_tts")
-processor = SpeechT5Processor.from_pretrained("speecht5_tts")
-vocoder = SpeechT5HifiGan.from_pretrained("speecht5_hifigan")
+model = SpeechT5ForTextToSpeech.from_pretrained("microsoft/speecht5_tts")
+processor = SpeechT5Processor.from_pretrained("microsoft/speecht5_tts")
+vocoder = SpeechT5HifiGan.from_pretrained("microsoft/speecht5_hifigan")
 
 speaker_embeddings = np.load("cmu_us_slt_arctic-wav-arctic_a0499.npy")
 speaker_embeddings = torch.tensor(speaker_embeddings).unsqueeze(0)
