@@ -1,13 +1,11 @@
 import streamlit as st
 import time
-from IPython.display import Markdown, display
 from datetime import datetime
 from transformers import SpeechT5Processor, SpeechT5ForSpeechToSpeech, SpeechT5HifiGan,SpeechT5ForTextToSpeech
-from datasets import load_dataset
 import numpy as np
 import torch
 from io import StringIO
-# from streamlit_chat import message as st_message
+import soundfile as sf
 
 
 html_temp= """
@@ -36,7 +34,6 @@ inputs = processor(text=text, return_tensors="pt")
 spectrogram = model.generate_speech(inputs["input_ids"], speaker_embeddings)
 with torch.no_grad():
     speech = vocoder(spectrogram)
-    import soundfile as sf
     sf.write("speech.wav", speech.numpy(), samplerate=16000)
     
 audio_file = open('speech.wav', 'rb')
@@ -56,7 +53,6 @@ if uploaded_file is not None:
     spectrogram = model.generate_speech(inputs["input_ids"], speaker_embeddings)
     with torch.no_grad():
         speech = vocoder(spectrogram)
-        import soundfile as sf
         sf.write("speech.wav", speech.numpy(), samplerate=16000)
     audio_file = open('speech.wav', 'rb')
     audio_bytes = audio_file.read()
