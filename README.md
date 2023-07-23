@@ -52,11 +52,11 @@ pip install -r requirements.txt
 
 ## 4. Usage
 
-For fine tunning or selecting the any specific voice by using speeker embeddings you can check-out `text_to_speech_Converter.ipynb`, here you will get the steps for fine-tuning and setting-up with speaker embeddings.
+For fine tunning or selecting any specific voice by using speeker embeddings you can check-out `text_to_speech_Converter.ipynb`, here you will get the steps for fine-tuning and setting-up the environment with speaker embeddings.
 
 To help you get started, this repository includes a  Speech_app.py file. You can use this file to test the SpeechT5 model on different input texts.
 
-Run the Speech_app.py file on your system and enter the text and you will get an audio file. You can also download this audio file. You can also read a .txt file a get the audio file for the same.
+Run the Speech_app.py file on your system and enter the text and you will get an audio file. You can also download this audio file. You can also read a .txt file and get the audio file for the same.
 
 ## 5. Model Architecture
 
